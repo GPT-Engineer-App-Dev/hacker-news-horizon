@@ -34,28 +34,28 @@ const HackerNews = () => {
         placeholder="Search stories..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="mb-4"
+        className="mb-4 border-orange-300 focus:border-orange-500 focus:ring-orange-500"
       />
       {isLoading ? (
         <div className="space-y-4">
           {[...Array(10)].map((_, index) => (
             <div key={index} className="animate-pulse">
-              <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+              <div className="h-4 bg-orange-200 rounded w-3/4 mb-2"></div>
+              <div className="h-4 bg-orange-200 rounded w-1/4"></div>
             </div>
           ))}
         </div>
       ) : (
         <ul className="space-y-4">
           {filteredStories?.map((story) => (
-            <li key={story.objectID} className="border-b pb-4">
-              <h2 className="text-xl font-semibold">{story.title}</h2>
-              <p className="text-sm text-gray-500">
+            <li key={story.objectID} className="border-b border-orange-200 pb-4">
+              <h2 className="text-xl font-semibold text-orange-900">{story.title}</h2>
+              <p className="text-sm text-orange-600">
                 {story.points} points | by {story.author}
               </p>
               <Button
                 variant="link"
-                className="p-0 h-auto"
+                className="p-0 h-auto text-orange-700 hover:text-orange-900"
                 asChild
               >
                 <a
